@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pydantic[email]
+pydantic-settings
+requests
+celery[redis]
+pytest
