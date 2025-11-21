@@ -15,15 +15,15 @@ celery_app.autodiscover_tasks()
 @celery_app.task
 def send_email_task(to_email: str, image_id: str):
     """
-    Celery-задача: получить текст с внешнего API и отправить письмо.
+    получить текст с джанги и отправить письмо.
     """
     service = MessageService()
 
-    # 1. Получаем текст из API (OCR / анализ)
+    # 1. текст из апишки джанги
     extracted_text = service.fetch_text_from_external_api(image_id)
 
-    # 2. Формируем текст письма
-    subject = f"Analysis result for image {image_id}"
+    # 2. текст письма
+    subject = f"Всё чётко {image_id}"
     body = f"Картинка {image_id} успешно обработана.\n\nИзвлечённый текст:\n\n{extracted_text}"
 
     # 3. Отправка email — уже внутри MessageService

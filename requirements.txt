@@ -5,3 +5,5 @@ pydantic-settings
 requests
 celery[redis]
 pytest
+pytest-cov
+httpx

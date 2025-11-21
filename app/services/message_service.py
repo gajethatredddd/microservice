@@ -30,7 +30,7 @@ class MessageService:
             response.raise_for_status()
             data = response.json()
             if "extracted_text" not in data:
-                raise ValueError(f"'extracted_text' not found in response for ID {image_id}")
+                raise ValueError(f"'extracted_text' нету по этому айди {image_id}")
             return data["extracted_text"]
         except RequestException as e:
             raise RuntimeError(f"Error fetching data from external API: {e}")
